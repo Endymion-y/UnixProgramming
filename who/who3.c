@@ -39,7 +39,7 @@ void show_info(struct utmp* rec){
 	printf(" ");
 	printf("%-15.15s", rec->ut_line);    // Device name
 	printf(" ");
-	printf("%20.20s", ctime(&rec->ut_time) + 4);     // Login time
+	printf("%20.20s", ctime(&(rec->ut_time)) + 4);     // Login time
 	printf(" ");
 #ifdef SHOWHOST
 	printf("(%s)", rec->ut_host);     // Hostname
