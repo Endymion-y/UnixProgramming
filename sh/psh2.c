@@ -13,7 +13,11 @@
 #define ARGLEN 100
 
 char* makestring(char* buf);
-void execute(char* arglist[])
+void execute(char* arglist[]);
+
+void handler(int signum){
+	;
+}
 
 int main(){
     char* arglist[MAXARGS + 1];
@@ -21,6 +25,9 @@ int main(){
     char argbuf[ARGLEN];
 
     numargs = 0;
+
+	//signal(SIGINT, SIG_IGN);
+	signal(SIGINT, handler);
 
     while (numargs < MAXARGS){
         printf("Arg[%d]?", numargs);
